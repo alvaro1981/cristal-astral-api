@@ -1,11 +1,15 @@
 from fastapi import FastAPI
 from init_db import init_db
-from api.routes import item
+from api.routes import item , item_images
+from fastapi.staticfiles import StaticFiles
+from core.config import UPLOAD_DIR, STATIC_URL
 
 app = FastAPI()
 
-
 app.include_router(item.router)
+app.include_router(item_images.router)
+
+app.mount(STATIC_URL, StaticFiles(directory=UPLOAD_DIR), name="static")
 
 @app.on_event("startup")
 def on_startup():
