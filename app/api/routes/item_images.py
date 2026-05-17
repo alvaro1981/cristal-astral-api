@@ -1,8 +1,8 @@
 from fastapi import APIRouter, UploadFile, File, Depends
 from sqlalchemy.orm import Session
 
-from database import get_db
-from services.image_service import upload_item_image
+from app.database import get_db
+from app.services.image_service import upload_item_image
 
 router = APIRouter(prefix="/items", tags=["Item Images"])
 

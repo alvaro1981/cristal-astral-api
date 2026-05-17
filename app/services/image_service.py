@@ -1,8 +1,8 @@
 from sqlalchemy.orm import Session
 from fastapi import UploadFile, HTTPException
 
-from models.item import Item
-from core.storage import LocalStorage
+from app.models.item import Item
+from app.core.storage import LocalStorage
 
 storage = LocalStorage()
 

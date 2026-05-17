@@ -1,2 +1,2 @@
-from models.item import Item	
-from models.usuario import Usuario
+from app.models.item import Item	
+from app.models.usuario import Usuario

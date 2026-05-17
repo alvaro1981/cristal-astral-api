@@ -1,7 +1,7 @@
 import os 
 from uuid import uuid4
 from fastapi import UploadFile
-from core.config import UPLOAD_DIR, STATIC_URL, ALLOWED_IMAGE_TYPES
+from app.core.config import UPLOAD_DIR, STATIC_URL, ALLOWED_IMAGE_TYPES
  
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)

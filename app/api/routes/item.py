@@ -1,12 +1,12 @@
 from fastapi import APIRouter, Query
 from fastapi import Depends, HTTPException
 from sqlalchemy.orm import Session
-from database import get_db
-from crud.item import get_item, create_item, update_item, delete_item, search_items
+from app.database import get_db
+from app.crud.item import get_item, create_item, update_item, delete_item, search_items
 from typing import Optional
-from schemas.item import ItemCreate, ItemResponse, ItemUpdate, ItemFilter
-from models.usuario import Usuario
-from api.deps import get_current_user, get_current_admin
+from app.schemas.item import ItemCreate, ItemResponse, ItemUpdate, ItemFilter
+from app.models.usuario import Usuario
+from app.api.deps import get_current_user, get_current_admin
  
 router = APIRouter(prefix="/items", tags=["Items"])
 
