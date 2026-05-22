@@ -2,7 +2,7 @@ import os
 from uuid import uuid4
 from fastapi import UploadFile
 from app.core.config import UPLOAD_DIR, STATIC_URL, ALLOWED_IMAGE_TYPES
- 
+from fastapi import HTTPException 
 
 os.makedirs(UPLOAD_DIR, exist_ok=True)
 
@@ -10,7 +10,7 @@ class LocalStorage:
     def save(self, file: UploadFile) -> str:
         # validat tipo MIME
         if file.content_type not in ALLOWED_IMAGE_TYPES:
-            raise HTTPExection( status_code=400, detail="Formato de iamgen no permitido")
+            raise HTTPException( status_code=400, detail="Formato de iamgen no permitido")
 
         # generar nombre unico
                  
